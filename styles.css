@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    vertical-align:top;
+    background-color: aquamarine;
+    padding: 1.5rem;
+}
+footer > * {
+  display:inline-block;
+  vertical-align:middle;
+  padding: 1rem;
+}
