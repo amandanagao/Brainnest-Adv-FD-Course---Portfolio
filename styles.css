@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+}
 footer {
     display: flex;
     align-items: center;
@@ -11,20 +20,45 @@ footer {
 footer > * {
     display: inline-block;
     vertical-align: middle;
-    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: teal;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+    flex-direction: column;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .about-me {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
-    align-content: center;
-    justify-content: space-evenly;
-    padding: 1.5rem;
+    margin: 5% 20%;
 }
 
 .about-me img {
     width: 300px;
-    height: auto;
+    margin: 20px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .about-me-imgbox {
