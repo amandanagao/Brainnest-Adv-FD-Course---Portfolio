@@ -13,3 +13,33 @@ footer > * {
     vertical-align: middle;
     padding: 1rem;
 }
+
+.about-me {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+}
+
+.about-me img {
+    width: 300px;
+    height: auto;
+}
+
+.about-me-imgbox {
+    text-align: center;
+}
+
+.about-me-socials {
+    font-size: 24px;
+}
+
+.contact-me-socials {
+    font-size: 24px;
+}
+
+.contact-me img {
+    height: 300px;
+    width: auto;
+}
