@@ -12,65 +12,73 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">ANYA FORGER</div>
-            <ul class="nav-links">
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#my-work">My Work</a></li>
-                <li><a href="#contact-me">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="about-me" id="about-me">
-            <div class="about-me-imgbox">
-                <img src="img/thumb-1920-1187146.jpg" alt="">
-                <h3 class="about-me-name">Anya Forger</h3>
-            </div>
-            <div class="about-me-text">
-                <h2>About Me</h2>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quo, tenetur nobis velit eligendi
-                    itaque consequuntur voluptate, ipsum consequatur praesentium ipsam nam fugit et amet saepe id earum
-                    dolorem a?
-                </p>
-                <div class="about-me-socials">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+<body id="all-sections">
+    <div id="init-animation" class="anim-container">
+        <figure>
+            <img id="imig" class="absolute-img init-img" src="img/anya-shadow.png" alt="anya forger's shadow">
+            <figcaption id="figcap" class="absolute-txt">ANYA<span class="x">x</span>FORGER</figcaption>
+        </figure>
+    </div>
+    <div id="site" class="hidden">
+        <header>
+            <nav class="navbar">
+                <div class="logo">ANYA FORGER</div>
+                <ul class="nav-links">
+                    <li><a href="#about-me" data-id="about-me" class="nav-link">About Me</a></li>
+                    <li><a href="#my-work" data-id="my-work" class="nav-link">My Work</a></li>
+                    <li><a href="#contact-me" data-id="contact-me" class="nav-link">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="about-me section" id="about-me">
+                <div class="about-me-imgbox">
+                    <img src="img/thumb-1920-1187146.jpg" alt="">
+                    <h3 class="about-me-name">Anya Forger</h3>
                 </div>
-            </div>
-        </section>
-        <section class="my-work" id="my-work">
-        </section>
-        <footer class="contact-me" id="contact-me">
-            <div class="contact-me-text">
-                <h2>Contact Me</h2>
-                <p>Please get in touch if you're interested in our projects, or feel that they could be mutually
-                    beneficial!</p>
-                <p>
-                    292 Dongfeng Avenue
-                    <br>
-                    Town A, Ohio 114514
-                </p>
-                <p>
-                    <i class="fa fa-phone" aria-hidden="true"></i> 919-810-3608
-                    <br>
-                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i> anyaf8@gmail.com
-                </p>
-                <div class="contact-me-socials">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                <div class="about-me-text">
+                    <h2>About Me</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quo, tenetur nobis velit eligendi
+                        itaque consequuntur voluptate, ipsum consequatur praesentium ipsam nam fugit et amet saepe id earum
+                        dolorem a?
+                    </p>
+                    <div class="about-me-socials">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="contact-me-imgbox">
-                <img src="./img/e6de0676327b44a1bb38a2039bb87d74.jpeg">
-            </div>
-        </footer>
-    </main>
+            </section>
+            <section class="my-work section hidden" aria-hidden="true" id="my-work">
+            </section>
+            <footer class="contact-me section hidden" aria-hidden="true" id="contact-me">
+                <div class="contact-me-text">
+                    <h2>Contact Me</h2>
+                    <p>Please get in touch if you're interested in our projects, or feel that they could be mutually
+                        beneficial!</p>
+                    <p>
+                        292 Dongfeng Avenue
+                        <br>
+                        Town A, Ohio 114514
+                    </p>
+                    <p>
+                        <i class="fa fa-phone" aria-hidden="true"></i> 919-810-3608
+                        <br>
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i> anyaf8@gmail.com
+                    </p>
+                    <div class="contact-me-socials">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="contact-me-imgbox">
+                    <img src="./img/e6de0676327b44a1bb38a2039bb87d74.jpeg">
+                </div>
+            </footer>
+        </main>
+    </div>
 </body>
 
 </html>

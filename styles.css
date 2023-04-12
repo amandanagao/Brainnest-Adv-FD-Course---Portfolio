@@ -1,8 +1,100 @@
+@font-face {
+    font-family: 'Tungsten';
+    src: local('./font/Tungsten Medium'), local('./font/Tungsten-Medium'),
+        url('./font/Tungsten-Medium.woff2') format('woff2'),
+        url('./font/Tungsten-Medium.woff') format('woff'),
+        url('./font/Tungsten-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Tungsten';
 }
+
+/*initial animation*/
+.absolute-txt {
+    font-size: 40vh;
+    font-weight: 700;
+    position: absolute;
+    top: 25vh;
+    left: 5vw;
+    color: rgb(0, 0, 27);
+    animation-name: figAnimation;
+        animation-duration: 1.5s;
+}
+.anim-container {
+    background-color: rgb(124, 240, 240);
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+.x {
+    position: relative;
+    font-size: 25vh;
+    bottom: 5vh;
+    color: gray;
+}
+
+@keyframes imgAnimation {
+    0% {
+        transform: translateY(100vh);
+    }
+    50% {
+        transform: translateY(5vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes opacityAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes figAnimation {
+    0% {
+        transform: translateX(100vh);
+    }
+
+    50% {
+        transform: translateX(5vh);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.absolute-img {
+    position: absolute;
+    top: 25vh;
+    transform: translateY(2vh);
+    right: -20vw;
+    animation: imgAnimation 1.5s;
+    
+
+}
+
+.opac {
+    animation: opacityAnimation .5s;
+}
+/*end*/
+
+
+
+
 
 body {
     font-family: cursive;
@@ -34,7 +126,7 @@ footer > * {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    /*gap: 20px;*/
 }
 
 .nav-links li {
@@ -45,6 +137,7 @@ footer > * {
 .nav-links a {
     color: #FFFFFF;
     text-decoration: none;
+    padding: 20px;
 }
 
 .about-me {
@@ -82,4 +175,18 @@ footer > * {
 .contact-me img {
     height: 300px;
     width: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.nav-link:hover {
+    border: 3px solid white;
+
+}
+
+.link-active {
+    background: #000;
 }
