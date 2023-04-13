@@ -265,8 +265,20 @@ ul li {
 }
 
 .contact-me-text {
+    display: grid;
+    font-size: 25px;
+    line-height: 1.5;
+    background-color: #789494;
+    border-radius: 20px;
+    box-shadow: 7px 7px;
+    padding: 30px;
+    width: 50%;
     animation-name: fromleft;
     animation-duration: .5s;
+}
+
+.descr {
+    font-size: 35px;
 }
 
 .contact-me-imgbox {
