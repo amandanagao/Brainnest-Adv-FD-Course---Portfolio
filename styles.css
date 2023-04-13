@@ -8,8 +8,6 @@
     font-style: normal;
 }
 
-
-
 :root {
     --font-color-primary: rgb(0, 0, 27);
 }
@@ -17,7 +15,6 @@
 a {
     text-decoration: none;
     color: var(--font-color-primary);
-
 }
 
 * {
@@ -44,8 +41,6 @@ a {
     height: 100vh;
     width: 100vw;
 }
-
-
 
 .x {
     position: relative;
@@ -98,8 +93,6 @@ a {
     transform: translateY(2vh);
     left: 80vw;
     animation: imgAnimation 1.5s;
-
-
 }
 
 .opac {
@@ -110,7 +103,6 @@ a {
 
 header {
     animation: slideFromTop .5s;
-
 }
 
 @keyframes slideFromTop {
@@ -123,10 +115,6 @@ header {
     }
 
 }
-
-
-
-
 
 body {
     background-color: rgb(151, 199, 199);
@@ -148,12 +136,12 @@ body {
     bottom: .5vw;
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: column;
 }
 
-.contact-me-title{
+.contact-me-title {
     padding: 10px; 
     height: 15vh;
     width: fit-content;
@@ -223,8 +211,7 @@ ul li {
 }
 
 .about-me img {
-    width: 350px;
-    margin: 20px;
+    width: 70%;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -233,6 +220,7 @@ ul li {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     text-align: center;
+    margin: 0 10%;
 }
 
 .about-me-name {
@@ -247,7 +235,6 @@ ul li {
     border-radius: 20px;
     box-shadow: 7px 7px;
     padding: 30px;
-    margin: 10px;
     animation-name: fromright;
     animation-duration: .5s;
 }
@@ -277,15 +264,12 @@ ul li {
     display: none;
 }
 
-
 .contact-me-text {
-    margin: 20px;
     animation-name: fromleft;
     animation-duration: .5s;
 }
 
 .contact-me-imgbox {
-    margin: 20px;
     animation-name: fromright;
     animation-duration: .5s;
 }
@@ -305,8 +289,6 @@ ul li:hover {
 .link-active a {
     color: white;
 }
-
-
 
 @keyframes fromleft {
     0% {
@@ -338,11 +320,8 @@ ul li:hover {
     animation: fromleft .5s;
 }
 
-
 .my-work-title {
-
     margin-left: .5vw;
-
 }
 
 .ml10, .ml11 , .ml12{
@@ -370,4 +349,3 @@ ul li:hover {
     line-height: 1em;
     transform-origin: 0 0;
 }
-
