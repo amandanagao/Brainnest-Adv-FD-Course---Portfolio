@@ -81,7 +81,7 @@
     position: absolute;
     top: 25vh;
     transform: translateY(2vh);
-    right: -20vw;
+    left: 80vw;
     animation: imgAnimation 1.5s;
     
 
