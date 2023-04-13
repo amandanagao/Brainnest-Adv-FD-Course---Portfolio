@@ -8,8 +8,6 @@
     font-style: normal;
 }
 
-
-
 :root {
     --font-color-primary: rgb(0, 0, 27);
 }
@@ -17,7 +15,6 @@
 a {
     text-decoration: none;
     color: var(--font-color-primary);
-
 }
 
 * {
@@ -36,15 +33,14 @@ a {
     left: 5vw;
     color: var(--font-color-primary);
     animation-name: figAnimation;
-        animation-duration: 1.5s;
+    animation-duration: 1.5s;
 }
+
 .anim-container {
     background-color: rgb(151, 199, 199);
     height: 100vh;
     width: 100vw;
 }
-
-
 
 .x {
     position: relative;
@@ -57,9 +53,11 @@ a {
     0% {
         transform: translateY(100vh);
     }
+
     50% {
         transform: translateY(5vh);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -95,40 +93,35 @@ a {
     transform: translateY(2vh);
     left: 80vw;
     animation: imgAnimation 1.5s;
-    
-
 }
 
 .opac {
     animation: opacityAnimation .5s;
 }
+
 /*end*/
 
 header {
     animation: slideFromTop .5s;
-
 }
 
 @keyframes slideFromTop {
     0% {
         transform: translateY(-10vh);
     }
+
     100% {
         transform: translateY(0);
     }
-    
+
 }
-
-
-
-
 
 body {
     background-color: rgb(151, 199, 199);
     font-family: cursive;
 }
 
-.logo{
+.logo {
     color: var(--font-color-primary);
     font-size: 7vh;
     font-weight: 700;
@@ -142,17 +135,28 @@ body {
     position: relative;
     bottom: .5vw;
 }
+
 footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me-title {
+    padding: 10px; 
+    height: 15vh;
+    width: fit-content;
+}
+
+.contact-me-content {
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
     vertical-align: top;
-    background-color: aquamarine;
-    padding: 1.5rem;
+    padding: 2em;
 }
 
-footer > * {
+.contact-me-content > * {
     display: inline-block;
     vertical-align: middle;
 }
@@ -248,11 +252,11 @@ ul li {
 }
 
 .contact-me-socials {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .contact-me img {
-    height: 300px;
+    height: 350px;
     width: auto;
 }
 
@@ -286,8 +290,6 @@ ul li:hover {
     color: white;
 }
 
-
-
 @keyframes fromleft {
     0% {
         transform: translateX(-100%);
@@ -318,14 +320,11 @@ ul li:hover {
     animation: fromleft .5s;
 }
 
-
 .my-work-title {
-    
     margin-left: .5vw;
-
 }
 
-.ml10 {
+.ml10, .ml11 {
     width: fit-content;
     left: 70vw;
     position: relative;
@@ -336,7 +335,7 @@ ul li:hover {
     letter-spacing: .5vw;
 }
 
-.ml10 .text-wrapper {
+.ml10 .text-wrapper, .ml11 .text-wrapper {
     position: relative;
     display: inline-block;
     padding-top: 0.2em;
@@ -345,7 +344,7 @@ ul li:hover {
     overflow: hidden;
 }
 
-.ml10 .letter {
+.ml10 .letter, .ml11 .letter {
     display: inline-block;
     line-height: 1em;
     transform-origin: 0 0;
