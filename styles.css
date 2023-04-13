@@ -156,12 +156,16 @@ footer > * {
 
 .about-me-imgbox {
     text-align: center;
+    animation-name: fromleft;
+    animation-duration: 2s;
 }
 
 .about-me-text {
     display: grid;
     align-content: center;
     grid-gap: 20px;
+    animation-name: fromright;
+    animation-duration: 2s;
 }
 
 .about-me-socials {
@@ -181,6 +185,15 @@ footer > * {
     display: none;
 }
 
+.contact-me-text{
+    animation-name: fromleft;
+    animation-duration: 2s;
+}
+
+.contact-me-imgbox{
+    animation-name: fromright;
+    animation-duration: 2s;
+}
 
 .nav-link:hover {
     border: 3px solid white;
@@ -189,4 +202,24 @@ footer > * {
 
 .link-active {
     background: #000;
+}
+
+@keyframes fromleft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes fromright {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        margin-left: 0%;
+    }
 }
