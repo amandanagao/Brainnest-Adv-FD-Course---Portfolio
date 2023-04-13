@@ -142,17 +142,28 @@ body {
     position: relative;
     bottom: .5vw;
 }
-footer {
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me-title{
+    padding: 10px; 
+    height: 15vh;
+    width: fit-content;
+}
+
+.contact-me-content {
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
     vertical-align: top;
-    background-color: aquamarine;
-    padding: 1.5rem;
+    padding: 2em;
 }
 
-footer > * {
+.contact-me-content > * {
     display: inline-block;
     vertical-align: middle;
 }
@@ -235,11 +246,11 @@ ul li {
 }
 
 .contact-me-socials {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .contact-me img {
-    height: 300px;
+    height: 350px;
     width: auto;
 }
 
@@ -248,11 +259,13 @@ ul li {
 }
 
 .contact-me-text{
+    margin: 20px;
     animation-name: fromleft;
     animation-duration: .5s;
 }
 
 .contact-me-imgbox{
+    margin: 20px;
     animation-name: fromright;
     animation-duration: .5s;
 }
