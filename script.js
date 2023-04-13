@@ -5,7 +5,9 @@ figcap = document.getElementById('figcap'),
 site = document.getElementById('site'),
 initAnimation = document.getElementById('init-animation'),
 hr = document.getElementById('hr'),
+hrWork = document.getElementById('hr-work'),
 h1 = document.getElementById('h1'),
+h1Work = document.getElementById('h1-work')
 container = document.getElementById('container'),
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
@@ -26,23 +28,24 @@ class Project {
 }
 
 
-const animation = function(){
-  let textWrapper = document.querySelector('.ml10 .letters');
+const animation = function(thing1, thing2){
+  let textWrapper = document.querySelector(`${thing1} ${thing2}`);
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: false})
   .add({
-    targets: '.ml10 .letter',
+    targets: `${thing1} .letter`,
     rotateY: [-90, 0],
     duration: 1300,
     delay: (el, i) => 45 * i
   });
 },
 displayProjects = function() {
+  setTimeout(()=>{
   for (let i=0; i<projectsArr.length; i++) {
     let project = new Project(projectsArr[i][0],projectsArr[i][1],projectsArr[i][2],projectsArr[i][3]);
     createElement(project)
-  }
+  }},500)
 },
 createElement = function(project) {
  const {image, title, siteSrc, codeSrc} = project;
@@ -90,10 +93,14 @@ createElement = function(project) {
 
 }
 
+hrWork.addEventListener('animationend',()=>{
+  h1Work.classList.remove('hidden')
+  animation('.ml11', '.letters')
+  displayProjects()
+})
+
 hr.addEventListener('animationend',()=>{
-  h1.classList.remove('hidden')
-  animation()
-  setTimeout(displayProjects(),2000)
+  animation('.ml10', '.letters')
 })
 
 
@@ -120,7 +127,10 @@ document.addEventListener('click',(e)=>{
   let btn = e.target;
 
   if (id) {
-    h1.classList.add('hidden')
+    if (id !== 'my-work') {
+      h1Work.classList.add('hidden')
+    }
+    container.innerHTML = ''
   sections.forEach(section => {
     section.classList.add('hidden')
     section.ariaHidden = 'true'
