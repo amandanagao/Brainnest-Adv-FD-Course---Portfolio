@@ -6,8 +6,10 @@ site = document.getElementById('site'),
 initAnimation = document.getElementById('init-animation'),
 hr = document.getElementById('hr'),
 hrWork = document.getElementById('hr-work'),
+hrContact = document.getElementById('hr-contact'),
 h1 = document.getElementById('h1'),
-h1Work = document.getElementById('h1-work')
+h1Work = document.getElementById('h1-work'),
+h1Contact = document.getElementById('h1-contact'),
 container = document.getElementById('container'),
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
@@ -103,6 +105,9 @@ hr.addEventListener('animationend',()=>{
   animation('.ml10', '.letters')
 })
 
+hrContact.addEventListener('animationend',()=>{
+  animation('.ml12', '.letters')
+})
 
 navLinks.forEach(navLink =>{
     navLink.addEventListener('click',()=>{
