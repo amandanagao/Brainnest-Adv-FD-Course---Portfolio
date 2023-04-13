@@ -327,6 +327,7 @@ ul li:hover {
 }
 
 .ml10 {
+    width: fit-content;
     left: 70vw;
     position: relative;
     font-weight: 900;
