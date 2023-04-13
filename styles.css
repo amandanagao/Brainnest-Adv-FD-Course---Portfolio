@@ -345,7 +345,7 @@ ul li:hover {
 
 }
 
-.ml10, .ml11 {
+.ml10, .ml11 , .ml12{
     width: fit-content;
     left: 70vw;
     position: relative;
@@ -356,7 +356,7 @@ ul li:hover {
     letter-spacing: .5vw;
 }
 
-.ml10 .text-wrapper, .ml11 .text-wrapper {
+.ml10 .text-wrapper, .ml11 .text-wrapper, .ml12 .text-wrapper {
     position: relative;
     display: inline-block;
     padding-top: 0.2em;
@@ -365,7 +365,7 @@ ul li:hover {
     overflow: hidden;
 }
 
-.ml10 .letter, .ml11 .letter {
+.ml10 .letter, .ml11 .letter, .ml12 .letter {
     display: inline-block;
     line-height: 1em;
     transform-origin: 0 0;

@@ -7,7 +7,9 @@ initAnimation = document.getElementById('init-animation'),
 hr = document.getElementById('hr'),
 hrWork = document.getElementById('hr-work'),
 h1 = document.getElementById('h1'),
-h1Work = document.getElementById('h1-work')
+h1Work = document.getElementById('h1-work'),
+hrContact = document.getElementById('hr-contact'),
+h1Contact = document.getElementById('h1-contact'),
 container = document.getElementById('container'),
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
@@ -101,6 +103,10 @@ hrWork.addEventListener('animationend',()=>{
 
 hr.addEventListener('animationend',()=>{
   animation('.ml10', '.letters')
+})
+
+hrContact.addEventListener('animationend',()=>{
+  animation('.ml12', '.letters')
 })
 
 
