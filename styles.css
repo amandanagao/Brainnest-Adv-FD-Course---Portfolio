@@ -151,6 +151,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 30vw;
     height: 10vh;
     text-align: center;
     color: var(--font-color-primary);
@@ -159,7 +160,8 @@ body {
 ul li {
     background: linear-gradient(to right, black 50%, rgb(120, 148, 148) 50%);
     background-size: 200% 100%;
-    background-position: right bottom;
+    background-position: right ;
+    width: 33%;
     transition: all .25s ease-out;
     height: 100%;
 }
@@ -174,12 +176,13 @@ ul li:hover {
     justify-content: flex-start;
     list-style: none;
     flex-direction: column;
-    width: 9vw;
+    width: 33%;
     border-left: 1px solid black;
 }
 
 .nav-links a {
     text-decoration: none;
+    width: 100%;
     padding: 20px;
     font-size: 28px;
     color: var(--font-color-primary);
