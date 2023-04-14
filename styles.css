@@ -26,10 +26,10 @@ a {
 
 /*Initial Animation*/
 .absolute-txt {
-    font-size: 40vh;
+    font-size: 20vw;
     font-weight: 700;
     position: absolute;
-    top: 25vh;
+    top: 15vw;
     left: 5vw;
     color: var(--font-color-primary);
     animation-name: figAnimation;
@@ -44,8 +44,8 @@ a {
 
 .x {
     position: relative;
-    font-size: 25vh;
-    bottom: 5vh;
+    font-size: 15vw;
+    bottom: 2.5vw;
     color: gray;
 }
 
@@ -89,7 +89,7 @@ a {
 
 .absolute-img {
     position: absolute;
-    top: 25vh;
+    top: 15vw;
     transform: translateY(2vh);
     left: 80vw;
     animation: imgAnimation 1.5s;
@@ -420,7 +420,7 @@ footer {
 }
 
 .icon>i:hover {
-    color: #FFE79F;
+    color: #FF5F67;
     cursor: pointer;
     scale: 1.5;
 }
@@ -453,4 +453,32 @@ footer {
         transform: scale(1);
     }
 
+}
+
+.contact-me-socials i:hover {
+    color: #FF5F67;
+        cursor: pointer;
+        scale: 1.5;
+}
+
+
+@media  screen and (max-width:1024px) {
+    .absolute-txt {
+        top: 20vw;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .absolute-txt {
+        top: 30vw;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .absolute-txt {
+        top: 70vw;
+    }
+    .absolute-img {
+        top: 35vw;
+    }
 }

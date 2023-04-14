@@ -68,14 +68,16 @@ createElement = function(project) {
   aSite.href = siteSrc;
   const git = document.createElement('i');
   git.classList.add('fa')
-  git.classList.add('fa-globe');
+  git.classList.add('fa-github');
+  git.title='github page'
   const aCode = document.createElement('a');
   aCode.target = '_blank';
   aCode.classList.add('icon')
   aCode.href = codeSrc;
   const site = document.createElement('i');
   site.classList.add('fa')
-  site.classList.add('fa-github');
+  site.classList.add('fa-globe');
+  site.title='site'
   const h3 = document.createElement('h3');
   h3.innerText = title;
   const icons = document.createElement('div');
