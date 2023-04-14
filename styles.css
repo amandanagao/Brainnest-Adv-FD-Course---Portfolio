@@ -320,13 +320,13 @@ ul li:hover {
 
 footer {
     position: fixed;
-   bottom: 0;
-   width: 100%;
-   height: 45px;   /* Height of the footer */
-   background: #789494;
-   text-align: center;
-   padding: 5px;
-  }
+    bottom: 0;
+    width: 100%;
+    height: 45px;   /* Height of the footer */
+    background: #789494;
+    text-align: center;
+    padding: 5px;
+}
 
 footer h2 span {
     color: rgb(51, 50, 50);
