@@ -235,6 +235,7 @@ ul li:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-shadow: 5px 5px 10px #789494;
     font-size: 35px;
     line-height: 1.5;
     padding: 50px;
@@ -340,7 +341,7 @@ footer {
 /* Page Title - Animation */
 .hr {
     display: inline-block;
-    width: 68vw;
+    width: 45vw;
     height: 0;
     border: .5vh solid rgb(114, 9, 9);
     position: relative;
@@ -354,7 +355,7 @@ footer {
 
 .ml10, .ml11, .ml12 {
     width: fit-content;
-    left: 70vw;
+    left: 46vw;
     position: relative;
     font-weight: 900;
     font-size: 12vh;
