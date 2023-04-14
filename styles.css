@@ -200,8 +200,16 @@ ul li {
     color: var(--font-color-primary);
 }
 
+.about-me {
+    background: linear-gradient(to right, #789494 0%, #789494 20%, #96C6C6 20%, #96C6C6 100%);
+    background-attachment: fixed;
+}
+
 .about-me-imgbox {
     text-align: center;
+    background-color: #b6eded;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
     animation-name: fromleft;
     animation-duration: .5s;
 }
@@ -210,6 +218,7 @@ ul li {
     width: 70%;
     border-radius: 50%;
     overflow: hidden;
+    padding: 20px;
 }
 
 .about-me-content {
@@ -220,29 +229,31 @@ ul li {
 }
 
 .about-me-name {
-    font-size: 50px;
+    font-size: 60px;
+    letter-spacing: .5vw;
 }
 
 .about-me-text {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 35px;
     line-height: 1.5;
-    background-color: #789494;
-    border-radius: 20px;
-    box-shadow: 7px 7px;
-    padding: 30px;
+    padding: 50px;
     animation-name: fromright;
     animation-duration: .5s;
 }
 
 .about-me-socials {
+    background-color: white;
     font-size: 40px;
+    padding: 15px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .about-me-socials i:hover {
-    color: #FFE79F;
+    color: #FF5F67;
     cursor: pointer;
     scale: 1.5;
 }
