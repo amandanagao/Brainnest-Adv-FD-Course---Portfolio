@@ -45,8 +45,9 @@ anime.timeline({loop: false})
 displayProjects = function() {
   setTimeout(()=>{
   for (let i=0; i<projectsArr.length; i++) {
+     setTimeout(()=>{
     let project = new Project(projectsArr[i][0],projectsArr[i][1],projectsArr[i][2],projectsArr[i][3]);
-    createElement(project)
+    createElement(project)},i*100)
   }},500)
 },
 createElement = function(project) {
