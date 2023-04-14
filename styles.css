@@ -24,7 +24,7 @@ a {
     font-family: 'Tungsten';
 }
 
-/*initial animation*/
+/*Initial Animation*/
 .absolute-txt {
     font-size: 40vh;
     font-weight: 700;
@@ -113,7 +113,6 @@ header {
     100% {
         transform: translateY(0);
     }
-
 }
 
 body {
@@ -121,6 +120,11 @@ body {
     font-family: cursive;
 }
 
+.hidden {
+    display: none;
+}
+
+/* Logo */
 .logo {
     color: var(--font-color-primary);
     font-size: 7vh;
@@ -136,38 +140,11 @@ body {
     bottom: .5vw;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-me-title {
-    padding: 10px; 
-    height: 15vh;
-    width: fit-content;
-}
-
-.contact-me-content {
-    align-items: center;
-    align-content: center;
-    justify-content: space-evenly;
-    vertical-align: top;
-    padding: 2em;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin: 0 5%;
-}
-
-.contact-me-content > * {
-    display: inline-block;
-    vertical-align: middle;
-}
-
+/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /*padding: 20px;*/
     background-color: rgb(120, 148, 148);
     font-size: 20px;
 }
@@ -179,7 +156,6 @@ footer {
     height: 10vh;
     text-align: center;
     color: var(--font-color-primary);
-    /*gap: 20px;*/
 }
 
 ul li {
@@ -190,6 +166,9 @@ ul li {
     height: 100%;
 }
 
+ul li:hover {
+    background-position: left bottom;
+}
 
 .nav-links li {
     display: flex;
@@ -198,14 +177,29 @@ ul li {
     list-style: none;
     flex-direction: column;
     width: 9vw;
+    border-left: 1px solid black;
 }
 
 .nav-links a {
     text-decoration: none;
     padding: 20px;
+    font-size: 28px;
     color: var(--font-color-primary);
 }
 
+.nav-link:hover {
+    color: white;
+}
+
+.link-active {
+    background-position: left bottom;
+}
+
+.link-active a {
+    color: white;
+}
+
+/* About Me Section */
 .about-me-imgbox {
     text-align: center;
     animation-name: fromleft;
@@ -253,6 +247,34 @@ ul li {
     scale: 1.5;
 }
 
+/* Contact Me Section */
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me-title {
+    padding: 10px; 
+    height: 15vh;
+    width: fit-content;
+}
+
+.contact-me-content {
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    vertical-align: top;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin: 0 5%;
+}
+
+.contact-me-content > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .contact-me-socials {
     font-size: 30px;
 }
@@ -260,10 +282,6 @@ ul li {
 .contact-me img {
     height: 350px;
     overflow: hidden;
-}
-
-.hidden {
-    display: none;
 }
 
 .contact-me-text {
@@ -289,22 +307,7 @@ ul li {
     animation-duration: .5s;
 }
 
-ul li:hover {
-    background-position: left bottom;
-}
-
-.nav-link:hover {
-    color: white;
-}
-
-.link-active {
-    background-position: left bottom;
-}
-
-.link-active a {
-    color: white;
-}
-
+/* Animations */
 @keyframes fromleft {
     0% {
         transform: translateX(-100%);
@@ -325,6 +328,7 @@ ul li:hover {
     }
 }
 
+/* Page Title - Animation */
 .hr {
     display: inline-block;
     width: 68vw;
