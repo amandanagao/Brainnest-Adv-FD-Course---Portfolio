@@ -236,7 +236,7 @@ ul li:hover {
     text-align: center;
     position: relative;
     top: -25px;
-    margin: 0 10% 3%;
+    margin: 3% 7%;
 }
 
 .about-me-name {
@@ -505,67 +505,91 @@ footer h2 span {
     .absolute-txt {
         top: 20vw;
     }
+
+    .about-me-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-me-imgbox {
+        width: 90%;
+    }
+
+    .about-me-text {
+        font-size: 27px;
+    }
 }
 
 @media screen and (max-width:768px) {
     .project-container {
         padding-bottom: 8vw;
-        
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 25vw;
     }
+
     .hover-items {
         height: 25vw;
         width: 45vw;
         bottom: 25.6vw;
     }
-        .portfolio-item {
-            width: 45vw;
-            height: 25vw;
-    
-        }
+
+    .portfolio-item {
+        width: 45vw;
+        height: 25vw;
+    }
     
     .portfolio-item img {
         width: 45vw;
         height: 25vw;
     }
+
     .absolute-txt {
         top: 30vw;
     }
 
-        .navbar,
-        .nav-links,
-        .nav-links li,
-        .nav-links a {
-            font-size: 2.5vw;
-            height: 6vw;
-        }
-        }
+    .navbar,
+    .nav-links,
+    .nav-links li,
+    .nav-links a {
+        font-size: 2.5vw;
+        height: 6vw;
+    }
+
+    .about-me-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-me-imgbox {
+        width: 100%;
+    }
+
+    .about-me-text {
+        font-size: 30px;
+    }
+}
 
 @media screen and (max-width:425px) {
     .project-container {
-            padding-bottom: 16vw;
+        padding-bottom: 16vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vw;
+    }
     
-            grid-template-columns: 1fr;
-            grid-template-rows: 50vw;
-        }
-    
-        .hover-items {
-            height: 50vw;
-            width: 90vw;
-            bottom: 51.2vw;
-        }
-    
-        .portfolio-item {
-            width: 90vw;
-            height: 50vw;
-    
-        }
-    
-        .portfolio-item img {
-            width: 90vw;
-            height: 50vw;
-        }
+    .hover-items {
+        height: 50vw;
+        width: 90vw;
+        bottom: 51.2vw;
+    }
+
+    .portfolio-item {
+        width: 90vw;
+        height: 50vw;
+    }
+
+    .portfolio-item img {
+        width: 90vw;
+        height: 50vw;
+    }
+
     .absolute-txt {
         font-size: 15vw;
         top: 70vw;
@@ -575,10 +599,12 @@ footer h2 span {
     .x {
         font-size: 10vw;
     }
+
     .absolute-img {
         top: 35vw;
         left: 60vw;
     }
+
     .navbar,
     .nav-links,
     .nav-links li,
