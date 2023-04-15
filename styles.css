@@ -146,6 +146,9 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: rgb(120, 148, 148);
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
 }
 
 .nav-links {
@@ -153,7 +156,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 30vw;
-    height: 10vh;
+    height: 5vw;
     text-align: center;
     color: var(--font-color-primary);
 }
@@ -233,6 +236,10 @@ ul li:hover {
 .about-me-name {
     font-size: 60px;
     letter-spacing: .5vw;
+}
+main {
+    padding-top: 5vw;
+    z-index: 0;
 }
 
 .about-me-text {
