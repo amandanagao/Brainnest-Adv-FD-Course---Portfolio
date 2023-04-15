@@ -276,11 +276,6 @@ main {
 }
 
 /* Contact Me Section */
-.contact-me-title {
-    padding: 10px; 
-    height: 15vh;
-}
-
 .contact-me-content {
     align-items: center;
     align-content: center;
@@ -289,13 +284,14 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     position: relative;
-    top: 20px;
+    top: -25px;
     margin: 3% 7%;
 }
 
 .contact-me-content > * {
     display: inline-block;
     vertical-align: middle;
+    padding: 25px;
 }
 
 .contact-me-socials {
@@ -584,6 +580,10 @@ footer h2 span {
 
     .about-me-text {
         font-size: 30px;
+    }
+    
+    .contact-me img {
+        height: 300px;
     }
 }
 
