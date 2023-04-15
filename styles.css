@@ -347,6 +347,9 @@ footer {
     background: #789494;
     text-align: center;
     padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 .absolute {
@@ -428,6 +431,15 @@ footer h2 span {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 15vw;
     margin: auto;
+}
+
+.about-me {
+    padding-bottom: 25px;
+}
+
+.my-work,
+.contact-me {
+    padding-bottom: 45px;
 }
 
 .hover-items {
