@@ -10,6 +10,7 @@ hrContact = document.getElementById('hr-contact'),
 h1 = document.getElementById('h1'),
 h1Work = document.getElementById('h1-work'),
 h1Contact = document.getElementById('h1-contact'),
+footer = document.getElementById('footer'),
 container = document.getElementById('container'),
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
@@ -52,6 +53,8 @@ displayProjects = function() {
     let project = new Project(projectsArr[i][0],projectsArr[i][1],projectsArr[i][2],projectsArr[i][3]);
     createElement(project)},i*100)
   }},500)
+  setTimeout(()=>footer.classList.remove('absolute'), 1000)
+  
 },
 createElement = function(project) {
  const {image, title, siteSrc, codeSrc} = project;
@@ -140,7 +143,12 @@ document.addEventListener('click',(e)=>{
   if (id) {
     if (id !== 'my-work') {
       h1Work.classList.add('hidden')
+      footer.classList.remove('absolute')
+    } else {
+      footer.classList.add('absolute')
+
     }
+    
     container.innerHTML = ''
   sections.forEach(section => {
     section.classList.add('hidden')

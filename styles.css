@@ -149,6 +149,7 @@ body {
     position: fixed;
     width: 100vw;
     z-index: 1;
+    height: 5vw;
 }
 
 .nav-links {
@@ -167,7 +168,7 @@ ul li {
     background-position: right ;
     width: 33%;
     transition: all .25s ease-out;
-    height: 100%;
+    height: 5vw;
 }
 
 ul li:hover {
@@ -182,14 +183,19 @@ ul li:hover {
     flex-direction: column;
     width: 33%;
     border-left: 1px solid black;
+    height: 5vw;
 }
 
 .nav-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     width: 100%;
-    padding: 20px;
-    font-size: 28px;
+    
+    font-size: 2vw;
     color: var(--font-color-primary);
+    height: 5vw;
 }
 
 .nav-link:hover {
@@ -329,13 +335,16 @@ main {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     height: 45px;   /* Height of the footer */
     background: #789494;
     text-align: center;
     padding: 5px;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 0;
 }
 
 footer h2 span {
@@ -405,6 +414,7 @@ footer h2 span {
 }
 
 .project-container {
+    padding-bottom: 2vw;
     width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -498,7 +508,15 @@ footer h2 span {
     .absolute-txt {
         top: 30vw;
     }
-}
+
+        .navbar,
+        .nav-links,
+        .nav-links li,
+        .nav-links a {
+            font-size: 2.5vw;
+            height: 6vw;
+        }
+        }
 
 @media screen and (max-width:425px) {
     .absolute-txt {
@@ -506,5 +524,16 @@ footer h2 span {
     }
     .absolute-img {
         top: 35vw;
+    }
+    .navbar,
+    .nav-links,
+    .nav-links li,
+    .nav-links a {
+        font-size: 4vw;
+        height: 10vw;
+    }
+
+    .nav-links {
+        width: 50vw;
     }
 }
