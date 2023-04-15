@@ -15,6 +15,7 @@ container = document.getElementById('container'),
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
 projectsArr = [
+['img/ChatGPT_Blog.png','ChatGPT Blog','https://kerry-space.github.io/chatgptLandingpage/index.html#about','https://github.com/davidIvankov/chatgptLandingpage'],
 ['img/twitchApi.png','Twich api using app', 'https://davidivankov.github.io/twitchApi/','https://github.com/davidIvankov/twitchApi'],
 ['img/wikipediaviewer.png','Wikipedia viewer', 'https://davidivankov.github.io/Wikipedia-vieawer/', 'https://github.com/davidIvankov/Wikipedia-viewer'],
 ['img/myWeatherApp.png','My Weather App', 'https://davidivankov.github.io/myWeatherApp/', 'https://github.com/davidIvankov/myWeatherApp'],
@@ -26,7 +27,8 @@ projectsArr = [
 ['img/25+5-CLOCK.png','25+5 Clock','http://davidivankov.github.io/25-5Clock/','https://github.com/davidIvankov/25-5Clock'],
 ['img/drumMachine.png','Drum Machine','http://davidivankov.github.io/drumMachin.github.io/','https://github.com/davidIvankov/drumMachin.github.io'],
 ['img/markdownPreviewer.png','Markdown Previewer','http://davidivankov.github.io/MarkDownPreviewer/','https://github.com/davidIvankov/MarkDownPreviewer'],
-['img/quoteMachine.png','Quote Machine','http://davidivankov.github.io/quoteMachine/','https://github.com/davidIvankov/quoteMachine']
+['img/quoteMachine.png','Quote Machine','http://davidivankov.github.io/quoteMachine/','https://github.com/davidIvankov/quoteMachine'],
+['img/heatMap.png','','http://davidivankov.github.io/d3-heatmap/','https://github.com/davidIvankov/d3-heatmap']
 ];
 
 class Project {
