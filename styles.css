@@ -118,6 +118,7 @@ header {
 body {
     background-color: rgb(151, 199, 199);
     min-height: 100vh;
+    position: relative;
 }
 
 .hidden {
@@ -349,6 +350,8 @@ footer {
     padding: 5px;
     left: 0;
     bottom: 0;
+    right: 0;
+    position: absolute;
 }
 
 .absolute {
