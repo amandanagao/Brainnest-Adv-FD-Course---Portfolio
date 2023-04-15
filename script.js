@@ -70,11 +70,13 @@ createElement = function(project) {
   hoverItems.classList.add('hover-items');
   const aSite = document.createElement('a');
   aSite.classList.add('icon');
+  aSite.ariaLabel = 'site hosting link'
   aSite.target='_blank'
   aSite.href = siteSrc;
   const git = document.createElement('i');
   git.classList.add('fa')
   git.classList.add('fa-github');
+  git.ariaLabel = 'github page'
   git.title='github page'
   const aCode = document.createElement('a');
   aCode.target = '_blank';

@@ -414,7 +414,7 @@ footer h2 span {
 }
 
 .project-container {
-    margin-bottom: 2vw;
+    padding-bottom: 2vw;
     width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
