@@ -207,7 +207,9 @@ ul li:hover {
     text-align: center;
     background-color: #82caca;
     border-radius: 5px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    box-shadow: 
+        10px 10px 10px rgb(51, 50, 50, 0.5),
+        -5px -5px 7px #789494;
     animation-name: fromleft;
     animation-duration: .5s;
 }
@@ -237,6 +239,7 @@ ul li:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-shadow: 5px 5px 10px #789494;
     font-size: 35px;
     line-height: 1.5;
     padding: 3vw;
