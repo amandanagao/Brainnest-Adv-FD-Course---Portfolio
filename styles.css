@@ -275,14 +275,9 @@ main {
 }
 
 /* Contact Me Section */
-.contact-me {
-    flex-direction: column;
-}
-
 .contact-me-title {
     padding: 10px; 
     height: 15vh;
-    width: fit-content;
 }
 
 .contact-me-content {
@@ -290,10 +285,11 @@ main {
     align-content: center;
     justify-content: space-evenly;
     vertical-align: top;
-    padding: 2em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin: 0 5%;
+    position: relative;
+    top: 20px;
+    margin: 3% 7%;
 }
 
 .contact-me-content > * {
@@ -302,24 +298,28 @@ main {
 }
 
 .contact-me-socials {
-    font-size: 30px;
-}
-
-.contact-me img {
-    height: 350px;
-    overflow: hidden;
+    background-color: white;
+    font-size: 40px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .contact-me-text {
     display: grid;
     font-size: 25px;
     line-height: 1.5;
-    background-color: #789494;
-    border-radius: 20px;
-    box-shadow: 7px 7px;
-    padding: 25px;
+    background-color: #82caca;
+    border-radius: 5px;
+    box-shadow: 
+        10px 10px 10px rgb(51, 50, 50, 0.5),
+        -5px -5px 7px #789494;
     animation-name: fromleft;
     animation-duration: .5s;
+}
+
+.contact-me-text p {
+    padding: 10px 20px;
 }
 
 .descr {
@@ -327,10 +327,17 @@ main {
 }
 
 .contact-me-imgbox {
-    padding: 40px;
+    width: 95%;
     text-align: center;
     animation-name: fromright;
     animation-duration: .5s;
+}
+
+.contact-me img {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 5% 0;
 }
 
 /* Footer */
@@ -413,6 +420,7 @@ footer h2 span {
     transform-origin: 0 0;
 }
 
+/* My Work Section */
 .project-container {
     padding-bottom: 2vw;
     width: 90vw;
@@ -435,7 +443,6 @@ footer h2 span {
     display: grid;
     grid-template-rows: 70% 30%;
     background-color: #82caca;
-
 }
 
 .hover-items>h3 {
@@ -472,8 +479,6 @@ footer h2 span {
     animation: growFromLeft .5s;
 }
 
-
-
 .portfolio-item img {
     width: 30vw;
     height: 15vw;
@@ -491,7 +496,6 @@ footer h2 span {
     100% {
         transform: scale(1);
     }
-
 }
 
 .contact-me-socials i:hover {
@@ -500,13 +504,14 @@ footer h2 span {
         scale: 1.5;
 }
 
-
+/* Responsiveness */
 @media  screen and (max-width:1024px) {
     .absolute-txt {
         top: 20vw;
     }
 
-    .about-me-content {
+    .about-me-content,
+    .contact-me-content {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -554,7 +559,8 @@ footer h2 span {
         height: 6vw;
     }
 
-    .about-me-content {
+    .about-me-content,
+    .contact-me-content {
         grid-template-columns: repeat(1, 1fr);
     }
 
