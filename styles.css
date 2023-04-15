@@ -414,7 +414,7 @@ footer h2 span {
 }
 
 .project-container {
-    padding-bottom: 2vw;
+    margin-bottom: 2vw;
     width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -468,8 +468,11 @@ footer h2 span {
 .portfolio-item {
     width: 30vw;
     height: 15vw;
+
     animation: growFromLeft .5s;
 }
+
+
 
 .portfolio-item img {
     width: 30vw;
@@ -505,6 +508,27 @@ footer h2 span {
 }
 
 @media screen and (max-width:768px) {
+    .project-container {
+        padding-bottom: 8vw;
+        
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 25vw;
+    }
+    .hover-items {
+        height: 25vw;
+        width: 45vw;
+        bottom: 25.6vw;
+    }
+        .portfolio-item {
+            width: 45vw;
+            height: 25vw;
+    
+        }
+    
+    .portfolio-item img {
+        width: 45vw;
+        height: 25vw;
+    }
     .absolute-txt {
         top: 30vw;
     }
@@ -519,11 +543,41 @@ footer h2 span {
         }
 
 @media screen and (max-width:425px) {
+    .project-container {
+            padding-bottom: 16vw;
+    
+            grid-template-columns: 1fr;
+            grid-template-rows: 50vw;
+        }
+    
+        .hover-items {
+            height: 50vw;
+            width: 90vw;
+            bottom: 51.2vw;
+        }
+    
+        .portfolio-item {
+            width: 90vw;
+            height: 50vw;
+    
+        }
+    
+        .portfolio-item img {
+            width: 90vw;
+            height: 50vw;
+        }
     .absolute-txt {
+        font-size: 15vw;
         top: 70vw;
+        right: 30vw;
+    }
+
+    .x {
+        font-size: 10vw;
     }
     .absolute-img {
         top: 35vw;
+        left: 60vw;
     }
     .navbar,
     .nav-links,
