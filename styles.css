@@ -130,7 +130,10 @@ body {
     min-height: 100vh;
     position: relative;
     margin-top: 0;
+}
 
+main {
+    padding-top: 3vh;
 }
 
 .hidden {
@@ -256,12 +259,8 @@ ul li:hover {
 }
 
 .about-me-name {
-    font-size: 60px;
+    font-size: clamp(3rem, 6vw, 7rem);
     letter-spacing: .5vw;
-}
-main {
-    padding-top: 5vw;
-    z-index: 0;
 }
 
 .about-me-text {
@@ -414,8 +413,7 @@ footer h2 span {
     width: fit-content;
     left: 43vw;
     position: relative;
-    font-weight: 900;
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: 700;
     color: rgb(114, 9, 9);
     letter-spacing: .5vw;
@@ -531,10 +529,10 @@ footer h2 span {
 }
 @media screen and (max-width: 1280px) {
     .ml10,
-        .ml11,
-        .ml12 {
-            top: 1vw;
-        }
+    .ml11,
+    .ml12 {
+        top: 1vw;
+    }
 }
 
 /* Responsiveness */
@@ -554,6 +552,12 @@ footer h2 span {
 
     .about-me-text {
         font-size: 27px;
+    }
+
+    .ml10,
+    .ml11,
+    .ml12 {
+            font-size: 6vw;
     }
 }
 
@@ -599,6 +603,7 @@ footer h2 span {
 
     .about-me-imgbox {
         width: 100%;
+        margin-top: 3vw;
     }
 
     .about-me-text {
@@ -608,23 +613,30 @@ footer h2 span {
     .contact-me img {
         height: 300px;
     }
+
+    .ml10,
+    .ml11,
+    .ml12 {
+            font-size: 10vw;
+    }
 }
 
 @media screen and (max-width:425px) {
     .about-me-imgbox{
-        margin-top: 20vw;
+        margin-top: 10vw;
     }
-
 
     .contact-me-content {
         margin-top: 20vw;
     }
+
     .ml10,
-        .ml11,
-        .ml12{
+    .ml11,
+    .ml12 {
             font-size: 12vw;
             top: 5vh;
-        }
+    }
+
     .project-container {
         padding-bottom: 16vw;
         grid-template-columns: 1fr;
