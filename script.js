@@ -120,10 +120,12 @@ hrWork.addEventListener('animationend',()=>{
 })
 
 hr.addEventListener('animationend',()=>{
+  h1.classList.remove('hidden')
   animation('.ml10', '.letters')
 })
 
 hrContact.addEventListener('animationend',()=>{
+  h1Contact.classList.remove('hidden')
   animation('.ml12', '.letters')
 })
 
@@ -137,11 +139,8 @@ imig.addEventListener('animationend', ()=>{
     imig.classList.add('opac')
     figcap.classList.add('opac')
     setTimeout(()=>{
-        initAnimation.classList.add('hidden')
-
-        site.classList.remove('hidden')
-
-
+        initAnimation.classList.add('none')
+        site.classList.remove('none')
     },450)
 })
 
@@ -150,21 +149,24 @@ document.addEventListener('click',(e)=>{
   let btn = e.target;
 
   if (id) {
-    if (id !== 'my-work') {
+    if (id === 'my-work') {
+      h1Contact.classList.add('hidden');
+      h1.classList.add('hidden');
+    } else if (id === 'about-me'){
       h1Work.classList.add('hidden')
-      footer.classList.remove('absolute')
-    } else {
-      footer.classList.add('absolute')
-
+      h1Contact.classList.add('hidden');
+    } else if (id !== 'contact-me') {
+      h1Work.classList.add('hidden')
+      h1.classList.add('hidden');
     }
     
     container.innerHTML = ''
   sections.forEach(section => {
-    section.classList.add('hidden')
+    section.classList.add('none')
     section.ariaHidden = 'true'
   });
   let selectedSection = document.getElementById(id);
-  selectedSection.classList.remove('hidden')
+  selectedSection.classList.remove('none')
   selectedSection.ariaHidden = 'false'
   } 
 })
