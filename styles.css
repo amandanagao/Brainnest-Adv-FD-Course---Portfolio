@@ -25,6 +25,11 @@ a {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tungsten';
+    
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /*Initial Animation*/
@@ -238,6 +243,12 @@ ul li:hover {
     box-shadow: 
         10px 10px 10px rgb(51, 50, 50, 0.5),
         -5px -5px 7px #789494;
+        animation-name: fromleft;
+            animation-duration: .5s;
+ 
+}
+
+.abtImageAnim {
     animation-name: fromleft;
     animation-duration: .5s;
 }
@@ -272,7 +283,21 @@ ul li:hover {
     line-height: 1.5;
     padding: 3vw;
     animation-name: fromright;
-    animation-duration: .5s;
+        animation-duration: .5s;
+    
+}
+
+.site {
+    overflow-x: hidden;
+}
+
+.section {
+    overflow-x: hidden;
+}
+
+.abtTextAnim {
+    animation-name: fromright;
+        animation-duration: .5s;
 }
 
 .about-me-socials {
