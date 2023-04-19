@@ -526,9 +526,12 @@ footer h2 span {
 }
 
 .portfolio-item {
+    display: none;
     width: 30vw;
     height: 15vw;
-
+}
+.projectAnimation {
+    display: block;
     animation: growFromLeft .5s;
 }
 

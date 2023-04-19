@@ -31,6 +31,9 @@ projectsArr = [
 ['img/heatMap.png','','http://davidivankov.github.io/d3-heatmap/','https://github.com/davidIvankov/d3-heatmap']
 ];
 
+let loaded = false,
+portfolioItems = document.querySelectorAll('portfolio-item')
+
 class Project {
   constructor(image, title, siteSrc, codeSrc) {
     this.image = image;
@@ -54,17 +57,30 @@ anime.timeline({loop: false})
   });
 },
 displayProjects = function() {
-  setTimeout(()=>{
-  for (let i=0; i<projectsArr.length; i++) {
-     setTimeout(()=>{
-    let project = new Project(projectsArr[i][0],projectsArr[i][1],projectsArr[i][2],projectsArr[i][3]);
-    createElement(project)},i*100)
-  }},500)
-  setTimeout(()=>footer.classList.remove('absolute'), 1000)
   
+  for (let i=0; i<projectsArr.length; i++) {
+     
+    let project = new Project(projectsArr[i][0],projectsArr[i][1],projectsArr[i][2],projectsArr[i][3]);
+    createElement(project)
+  }
+ const projectItems = document.querySelectorAll('.portfolio-item')
+  projectaAnimation(projectItems)
+  loaded = true
+  console.log(loaded)
+  setTimeout(()=>{
+    footer.classList.remove('absolute')}, 1000)
+    portfolioItems = projectItems;
+},
+
+projectaAnimation=function(port){
+port.forEach((projectItem, i)=>{
+  setTimeout(()=>{projectItem.classList.add('projectAnimation')}, i *100)
+})
+
 },
 createElement = function(project) {
  const {image, title, siteSrc, codeSrc} = project;
+ 
 
   const projectDiv = document.createElement("div");
   projectDiv.classList.add('portfolio-item');
@@ -107,7 +123,8 @@ createElement = function(project) {
   icons.appendChild(aCode);
   icons.appendChild(aSite);
   aCode.appendChild(git);
-  aSite.appendChild(site)
+  aSite.appendChild(site);
+ 
 
 
 
@@ -115,8 +132,12 @@ createElement = function(project) {
 
 hrWork.addEventListener('animationend',()=>{
   h1Work.classList.remove('hidden')
-  animation('.ml11', '.letters')
-  displayProjects()
+  animation('.ml11', '.letters');
+  setTimeout(()=>{if (!loaded) {
+    displayProjects()
+  } else {
+  projectaAnimation(portfolioItems);
+  }},500)
 })
 
 hr.addEventListener('animationend',()=>{
@@ -150,17 +171,25 @@ document.addEventListener('click',(e)=>{
 
   if (id) {
     if (id === 'my-work') {
-      h1Contact.classList.add('hidden');
+      if (!loaded){
+        //displayProjects();
+        h1Contact.classList.add('hidden');
       h1.classList.add('hidden');
+      } else {
+        //projectaAnimation(portfolioItems)
+        h1Contact.classList.add('hidden');
+      h1.classList.add('hidden');
+      }
+      
     } else if (id === 'about-me'){
+      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
       h1Work.classList.add('hidden')
       h1Contact.classList.add('hidden');
-    } else if (id !== 'contact-me') {
+    } else if (id === 'contact-me') {
+      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
       h1Work.classList.add('hidden')
       h1.classList.add('hidden');
     }
-    
-    container.innerHTML = ''
   sections.forEach(section => {
     section.classList.add('none')
     section.ariaHidden = 'true'
