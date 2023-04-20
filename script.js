@@ -32,7 +32,8 @@ projectsArr = [
 ];
 
 let loaded = false,
-portfolioItems = document.querySelectorAll('portfolio-item')
+portfolioItems = document.querySelectorAll('portfolio-item'),
+width = screen.width;
 
 class Project {
   constructor(image, title, siteSrc, codeSrc) {
@@ -80,57 +81,28 @@ port.forEach((projectItem, i)=>{
 },
 createElement = function(project) {
  const {image, title, siteSrc, codeSrc} = project;
- 
-
-  const projectDiv = document.createElement("div");
-  projectDiv.classList.add('portfolio-item');
-  const imageDiv = document.createElement('div');
-  imageDiv.classList.add('image');
-  const img = document.createElement('img');
-  img.src = image;
-  img.alt = title;
-  const hoverItems = document.createElement('div');
-  hoverItems.classList.add('hover-items');
-  const aSite = document.createElement('a');
-  aSite.classList.add('icon');
-  aSite.ariaLabel = 'site hosting link'
-  aSite.target='_blank'
-  aSite.href = siteSrc;
-  const git = document.createElement('i');
-  git.classList.add('fa')
-  git.classList.add('fa-github');
-  git.ariaLabel = 'github page'
-  git.title='github page'
-  const aCode = document.createElement('a');
-  aCode.target = '_blank';
-  aCode.classList.add('icon')
-  aCode.href = codeSrc;
-  const site = document.createElement('i');
-  site.classList.add('fa')
-  site.classList.add('fa-globe');
-  site.title='site'
-  const h3 = document.createElement('h3');
-  h3.innerText = title;
-  const icons = document.createElement('div');
-  icons.classList.add('icons');
-
-  container.appendChild(projectDiv);
-  projectDiv.appendChild(imageDiv);
-  imageDiv.appendChild(img);
-  projectDiv.appendChild(hoverItems);
-  hoverItems.appendChild(h3);
-  hoverItems.appendChild(icons);
-  icons.appendChild(aCode);
-  icons.appendChild(aSite);
-  aCode.appendChild(git);
-  aSite.appendChild(site);
- 
-
-
-
-}
-
-hrWork.addEventListener('animationend',()=>{
+ const projectDiv = `<div class="portfolio-item">
+                      <div class='image'>
+                       <img src='${image}' alt='${title}'>
+                      </div>
+                      <div class='hover-items'> 
+                       <h3>${title}</h3>
+                       <div class='icons'>
+                        <a href='${siteSrc}' aria-label='site hosting link' class='icon'>
+                         <i class='fa fa-globe' title='site'></i>
+                        </a>
+                        <a href='${codeSrc}' aria-label='code link' class='icon'>
+                         <i class='fa fa-github' title='code link'></i>
+                        </a>
+                       </div>
+                      </div>
+                     </div>`;
+  
+ container.innerHTML += projectDiv;
+},
+setDisplay = function() {
+  if (width <= 425) {
+    hrWork.addEventListener('animationend',()=>{
   h1Work.classList.remove('hidden')
   animation('.ml11', '.letters');
   setTimeout(()=>{if (!loaded) {
@@ -199,3 +171,81 @@ document.addEventListener('click',(e)=>{
   selectedSection.ariaHidden = 'false'
   } 
 })
+  }
+};
+
+/*hrWork.addEventListener('animationend',()=>{
+  h1Work.classList.remove('hidden')
+  animation('.ml11', '.letters');
+  setTimeout(()=>{if (!loaded) {
+    displayProjects()
+  } else {
+  projectaAnimation(portfolioItems);
+  }},500)
+})
+
+hr.addEventListener('animationend',()=>{
+  h1.classList.remove('hidden')
+  animation('.ml10', '.letters')
+})
+
+hrContact.addEventListener('animationend',()=>{
+  h1Contact.classList.remove('hidden')
+  animation('.ml12', '.letters')
+})
+
+navLinks.forEach(navLink =>{
+    navLink.addEventListener('click',()=>{
+        navLinks.forEach(navLink => navLink.parentElement.classList.remove('link-active'))
+        navLink.parentElement.classList.add('link-active')
+    })
+})
+imig.addEventListener('animationend', ()=>{
+    imig.classList.add('opac')
+    figcap.classList.add('opac')
+    setTimeout(()=>{
+        initAnimation.classList.add('none')
+        site.classList.remove('none')
+    },450)
+})
+
+document.addEventListener('click',(e)=>{
+  let id = e.target.dataset.id;
+  let btn = e.target;
+
+  if (id) {
+    if (id === 'my-work') {
+      if (!loaded){
+        //displayProjects();
+        h1Contact.classList.add('hidden');
+      h1.classList.add('hidden');
+      } else {
+        //projectaAnimation(portfolioItems)
+        h1Contact.classList.add('hidden');
+      h1.classList.add('hidden');
+      }
+      
+    } else if (id === 'about-me'){
+      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
+      h1Work.classList.add('hidden')
+      h1Contact.classList.add('hidden');
+    } else if (id === 'contact-me') {
+      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
+      h1Work.classList.add('hidden')
+      h1.classList.add('hidden');
+    }
+  sections.forEach(section => {
+    section.classList.add('none')
+    section.ariaHidden = 'true'
+  });
+  let selectedSection = document.getElementById(id);
+  selectedSection.classList.remove('none')
+  selectedSection.ariaHidden = 'false'
+  } 
+})*/
+
+window.addEventListener('resize',()=>{
+  width = screen.width
+  setDisplay();
+})
+setDisplay();
