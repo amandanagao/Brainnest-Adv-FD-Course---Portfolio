@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll(".section"),
+body = document.getElementById('all-sections'),
 navLinks = document.querySelectorAll('.nav-link'),
 imig = document.getElementById('imig'),
 figcap = document.getElementById('figcap'),
@@ -32,7 +33,8 @@ projectsArr = [
 ];
 
 let loaded = false,
-portfolioItems = document.querySelectorAll('portfolio-item')
+portfolioItems = document.querySelectorAll('portfolio-item'),
+width = window.innerWidth;
 
 class Project {
   constructor(image, title, siteSrc, codeSrc) {
@@ -80,57 +82,29 @@ port.forEach((projectItem, i)=>{
 },
 createElement = function(project) {
  const {image, title, siteSrc, codeSrc} = project;
- 
-
-  const projectDiv = document.createElement("div");
-  projectDiv.classList.add('portfolio-item');
-  const imageDiv = document.createElement('div');
-  imageDiv.classList.add('image');
-  const img = document.createElement('img');
-  img.src = image;
-  img.alt = title;
-  const hoverItems = document.createElement('div');
-  hoverItems.classList.add('hover-items');
-  const aSite = document.createElement('a');
-  aSite.classList.add('icon');
-  aSite.ariaLabel = 'site hosting link'
-  aSite.target='_blank'
-  aSite.href = siteSrc;
-  const git = document.createElement('i');
-  git.classList.add('fa')
-  git.classList.add('fa-github');
-  git.ariaLabel = 'github page'
-  git.title='github page'
-  const aCode = document.createElement('a');
-  aCode.target = '_blank';
-  aCode.classList.add('icon')
-  aCode.href = codeSrc;
-  const site = document.createElement('i');
-  site.classList.add('fa')
-  site.classList.add('fa-globe');
-  site.title='site'
-  const h3 = document.createElement('h3');
-  h3.innerText = title;
-  const icons = document.createElement('div');
-  icons.classList.add('icons');
-
-  container.appendChild(projectDiv);
-  projectDiv.appendChild(imageDiv);
-  imageDiv.appendChild(img);
-  projectDiv.appendChild(hoverItems);
-  hoverItems.appendChild(h3);
-  hoverItems.appendChild(icons);
-  icons.appendChild(aCode);
-  icons.appendChild(aSite);
-  aCode.appendChild(git);
-  aSite.appendChild(site);
- 
-
-
-
-}
-
-hrWork.addEventListener('animationend',()=>{
+ const projectDiv = `<div class="portfolio-item">
+                      <div class='image'>
+                       <img src='${image}' alt='${title}'>
+                      </div>
+                      <div class='hover-items'> 
+                       <h3>${title}</h3>
+                       <div class='icons'>
+                        <a href='${siteSrc}' aria-label='site hosting link' class='icon'>
+                         <i class='fa fa-globe' title='site'></i>
+                        </a>
+                        <a href='${codeSrc}' aria-label='code link' class='icon'>
+                         <i class='fa fa-github' title='code link'></i>
+                        </a>
+                       </div>
+                      </div>
+                     </div>`;
+  
+ container.innerHTML += projectDiv;
+},
+mobileSite = function(){
+  if (width <= 425 ) {
+    site.classList.add('none')
+    hrWork.addEventListener('animationend',()=>{
   h1Work.classList.remove('hidden')
   animation('.ml11', '.letters');
   setTimeout(()=>{if (!loaded) {
@@ -172,11 +146,9 @@ document.addEventListener('click',(e)=>{
   if (id) {
     if (id === 'my-work') {
       if (!loaded){
-        //displayProjects();
         h1Contact.classList.add('hidden');
       h1.classList.add('hidden');
       } else {
-        //projectaAnimation(portfolioItems)
         h1Contact.classList.add('hidden');
       h1.classList.add('hidden');
       }
@@ -199,3 +171,17 @@ document.addEventListener('click',(e)=>{
   selectedSection.ariaHidden = 'false'
   } 
 })
+
+
+  } else {
+
+  }
+};
+window.addEventListener('resize',()=>{
+  console.log(screen.width)
+  width = screen.width
+  
+  mobileSite();
+})
+console.log
+mobileSite();

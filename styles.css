@@ -655,6 +655,7 @@ footer h2 span {
 
 @media screen and (max-width:425px) {
     .about-me-imgbox{
+        border: 1px solid blue;
         margin-top: 10vw;
     }
 
