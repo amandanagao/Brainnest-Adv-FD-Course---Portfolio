@@ -466,6 +466,7 @@ footer h2 span {
 /* My Work Section */
 .project-container {
     padding-bottom: 2vw;
+    min-height: 100vh;
     gap: 1vw;
     width: 90vw;
     display: grid;

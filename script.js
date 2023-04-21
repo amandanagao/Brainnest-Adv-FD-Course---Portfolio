@@ -13,6 +13,10 @@ h1Work = document.getElementById('h1-work'),
 h1Contact = document.getElementById('h1-contact'),
 footer = document.getElementById('footer'),
 container = document.getElementById('container'),
+contactLeft = document.getElementById('contact-left'),
+abtLeft = document.getElementById('abt-left'),
+abtRight = document.getElementById('abt-right'),
+contactRight = document.getElementById('contact-right')
 //insert your projects in array below named projects in following format
 //[img address, name, hosted site link, github reposatory link]
 projectsArr = [
@@ -65,7 +69,9 @@ displayProjects = function() {
     createElement(project)
   }
  const projectItems = document.querySelectorAll('.portfolio-item')
+ if (width <= 425) {
   projectaAnimation(projectItems)
+ }
   loaded = true
   console.log(loaded)
   setTimeout(()=>{
@@ -187,18 +193,95 @@ document.addEventListener('click',(e)=>{
 
 })
 },
+observableAnimations = function(){
+  const observer = new IntersectionObserver(function(entries) {
+  if (entries[0].target === hr) {
+	if(entries[0].isIntersecting === true){
+    console.log(entries[0])
+		entries[0].target.classList.add('hrAnim');
+  } else {
+    entries[0].target.classList.remove('hrAnim');
+    h1.classList.add('hidden')
+  }
+} else if (entries[0].target === hrContact) {
+	if(entries[0].isIntersecting === true){
+    console.log(entries[0])
+		entries[0].target.classList.add('hrAnim');
+  } else {
+    entries[0].target.classList.remove('hrAnim');
+    h1Contact.classList.add('hidden')
+  }
+} else if (entries[0].target === hrWork){
+  if(entries[0].isIntersecting === true){
+    console.log(entries[0])
+		entries[0].target.classList.add('hrAnim');
+  } else {
+    entries[0].target.classList.remove('hrAnim');
+    h1Work.classList.add('hidden')
+  }
+}
+}, { threshold: [0] });
+
+observer.observe(hr);
+observer.observe(hrContact)
+observer.observe(hrWork)
+},
+rightLeftAnimations = function() {
+  const leftRight = new IntersectionObserver(function(entries) {
+    if (entries[0].target === abtLeft) {
+  if(entries[0].isIntersecting === true) {
+    entries[0].target.classList.add('leftAnim')
+    abtRight.classList.add('rightAnim')
+  } else {
+    abtRight.classList.remove('rightAnim')
+    entries[0].target.classList.remove('leftAnim')
+  }
+} else if (entries[0].target === contactLeft) {
+  if(entries[0].isIntersecting === true) {
+    entries[0].target.classList.add('leftAnim')
+    contactRight.classList.add('rightAnim')
+
+  } else {
+    entries[0].target.classList.remove('leftAnim');
+    contactRight.classList.remove('rightAnim')
+  }
+}
+}, { threshold: [0] });
+leftRight.observe(abtLeft);
+leftRight.observe(contactLeft);
+},
+projectFade = function(){
+
+  const fade = new IntersectionObserver(function(entries) {
+  if(entries[0].isIntersecting === true) {
+    entries[0].target.classList.add('fadeIn')
+  } else {
+    entries[0].target.classList.remove('fadeIn');
+  }
+}, { threshold: [0] });
+  
+portfolioItems.forEach(project=>{
+ fade.observe(project)
+})
+}
 setDisplay = function() {
   if (width <= 425) {
     render();
   } else {
     style.href = 'desktop.css'
     render();
+    observableAnimations();
+    rightLeftAnimations();
+    displayProjects();
+    projectFade();
   }
 };
 
 window.addEventListener('resize',()=>{
   location.reload();
   width = screen.width
+  observableAnimations();
   setDisplay();
+  
 })
 setDisplay();

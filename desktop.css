@@ -244,7 +244,28 @@ ul li:hover {
 }
 
 /* About Me Section */
+.about-me-text {
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 5px 5px 10px #789494;
+    font-size: 35px;
+    line-height: 1.5;
+    padding: 3vw;
+
+
+}
+
+.contact-me-imgbox {
+    transform: translateX(100%);
+    width: 95%;
+    text-align: center;
+}
+
+
 .about-me-imgbox {
+    transform: translateX(-100%);
     width: 95%;
     text-align: center;
     background-color: #82caca;
@@ -252,13 +273,30 @@ ul li:hover {
     box-shadow:
         10px 10px 10px rgb(51, 50, 50, 0.5),
         -5px -5px 7px #789494;
-    animation-name: fromleft;
-    animation-duration: .5s;
 
 }
 
-.abtImageAnim {
+.contact-me-text {
+    transform: translateX(-100%);
+    display: grid;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color: #82caca;
+    border-radius: 5px;
+    box-shadow:
+        10px 10px 10px rgb(51, 50, 50, 0.5),
+        -5px -5px 7px #789494;
+}
+
+.leftAnim {
+    transform: translateX(0);
     animation-name: fromleft;
+    animation-duration: .5s;
+}
+
+.rightAnim {
+    transform: translateX(0);
+    animation-name: fromright;
     animation-duration: .5s;
 }
 
@@ -283,18 +321,7 @@ ul li:hover {
     letter-spacing: .5vw;
 }
 
-.about-me-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-shadow: 5px 5px 10px #789494;
-    font-size: 35px;
-    line-height: 1.5;
-    padding: 3vw;
-    animation-name: fromright;
-    animation-duration: .5s;
 
-}
 
 .site {
     overflow-x: hidden;
@@ -350,18 +377,6 @@ ul li:hover {
     justify-content: space-evenly;
 }
 
-.contact-me-text {
-    display: grid;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    background-color: #82caca;
-    border-radius: 5px;
-    box-shadow:
-        10px 10px 10px rgb(51, 50, 50, 0.5),
-        -5px -5px 7px #789494;
-    animation-name: fromleft;
-    animation-duration: .5s;
-}
 
 .contact-me-text p {
     padding: 10px 20px;
@@ -371,12 +386,7 @@ ul li:hover {
     font-size: 35px;
 }
 
-.contact-me-imgbox {
-    width: 95%;
-    text-align: center;
-    animation-name: fromright;
-    animation-duration: .5s;
-}
+
 
 .contact-me img {
     height: 400px;
@@ -432,15 +442,19 @@ footer h2 span {
 /* Page Title - Animation */
 .hr {
     display: inline-block;
-    width: 27vw;
     left: 15vw;
     height: 0;
     border: .5vh solid rgb(114, 9, 9);
     position: relative;
     z-index: 1;
     top: 10.5vh;
-    animation: growtoright .5s;
 }
+.hrAnim {
+    width: 27vw;
+    animation: growtoright .5s;
+
+}
+
 
 @keyframes growtoright {
     0% {
@@ -550,14 +564,16 @@ footer h2 span {
 }
 
 .portfolio-item {
-    display: none;
+    transition: opacity .5s ease-in-out;
+        opacity: 0;
+        display: block;
+        animation: growFromLeft .5s;
     width: 30vw;
     height: 15vw;
 }
 
-.projectAnimation {
-    display: block;
-    animation: growFromLeft .5s;
+.fadeIn {
+    opacity: 1;
 }
 
 .portfolio-item img {
