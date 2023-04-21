@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll(".section"),
+style = document.getElementById('style')
 navLinks = document.querySelectorAll('.nav-link'),
 imig = document.getElementById('imig'),
 figcap = document.getElementById('figcap'),
@@ -43,7 +44,6 @@ class Project {
     this.codeSrc = codeSrc
   }
 }
-
 
 const animation = function(thing1, thing2){
   let textWrapper = document.querySelector(`${thing1} ${thing2}`);
@@ -100,9 +100,8 @@ createElement = function(project) {
   
  container.innerHTML += projectDiv;
 },
-setDisplay = function() {
-  if (width <= 425) {
-    hrWork.addEventListener('animationend',()=>{
+render = function() {
+ hrWork.addEventListener('animationend',()=>{
   h1Work.classList.remove('hidden')
   animation('.ml11', '.letters');
   setTimeout(()=>{if (!loaded) {
@@ -129,12 +128,17 @@ navLinks.forEach(navLink =>{
     })
 })
 imig.addEventListener('animationend', ()=>{
+  
     imig.classList.add('opac')
     figcap.classList.add('opac')
     setTimeout(()=>{
         initAnimation.classList.add('none')
         site.classList.remove('none')
+        if (width > 425 ){
+          sections.forEach((section)=>section.classList.remove('none'))
+        }
     },450)
+  
 })
 
 document.addEventListener('click',(e)=>{
@@ -142,6 +146,7 @@ document.addEventListener('click',(e)=>{
   let btn = e.target;
 
   if (id) {
+    if (width <= 425 ) {
     if (id === 'my-work') {
       if (!loaded){
         //displayProjects();
@@ -169,82 +174,30 @@ document.addEventListener('click',(e)=>{
   let selectedSection = document.getElementById(id);
   selectedSection.classList.remove('none')
   selectedSection.ariaHidden = 'false'
+} else {
+  sections.forEach(section => {
+    section.classList.add('displaced')
+  });
+  let selectedSection = document.getElementById(id);
+  selectedSection.classList.remove('displaced')
+}
   } 
+
+  
+
 })
+},
+setDisplay = function() {
+  if (width <= 425) {
+    render();
+  } else {
+    style.href = 'desktop.css'
+    render();
   }
 };
 
-/*hrWork.addEventListener('animationend',()=>{
-  h1Work.classList.remove('hidden')
-  animation('.ml11', '.letters');
-  setTimeout(()=>{if (!loaded) {
-    displayProjects()
-  } else {
-  projectaAnimation(portfolioItems);
-  }},500)
-})
-
-hr.addEventListener('animationend',()=>{
-  h1.classList.remove('hidden')
-  animation('.ml10', '.letters')
-})
-
-hrContact.addEventListener('animationend',()=>{
-  h1Contact.classList.remove('hidden')
-  animation('.ml12', '.letters')
-})
-
-navLinks.forEach(navLink =>{
-    navLink.addEventListener('click',()=>{
-        navLinks.forEach(navLink => navLink.parentElement.classList.remove('link-active'))
-        navLink.parentElement.classList.add('link-active')
-    })
-})
-imig.addEventListener('animationend', ()=>{
-    imig.classList.add('opac')
-    figcap.classList.add('opac')
-    setTimeout(()=>{
-        initAnimation.classList.add('none')
-        site.classList.remove('none')
-    },450)
-})
-
-document.addEventListener('click',(e)=>{
-  let id = e.target.dataset.id;
-  let btn = e.target;
-
-  if (id) {
-    if (id === 'my-work') {
-      if (!loaded){
-        //displayProjects();
-        h1Contact.classList.add('hidden');
-      h1.classList.add('hidden');
-      } else {
-        //projectaAnimation(portfolioItems)
-        h1Contact.classList.add('hidden');
-      h1.classList.add('hidden');
-      }
-      
-    } else if (id === 'about-me'){
-      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
-      h1Work.classList.add('hidden')
-      h1Contact.classList.add('hidden');
-    } else if (id === 'contact-me') {
-      portfolioItems.forEach(item=>{item.classList.remove('projectAnimation')})
-      h1Work.classList.add('hidden')
-      h1.classList.add('hidden');
-    }
-  sections.forEach(section => {
-    section.classList.add('none')
-    section.ariaHidden = 'true'
-  });
-  let selectedSection = document.getElementById(id);
-  selectedSection.classList.remove('none')
-  selectedSection.ariaHidden = 'false'
-  } 
-})*/
-
 window.addEventListener('resize',()=>{
+  location.reload();
   width = screen.width
   setDisplay();
 })
