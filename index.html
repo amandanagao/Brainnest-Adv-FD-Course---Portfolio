@@ -6,109 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 
-<body id="all-sections">
-    <div id="init-animation" class="anim-container">
-        <figure>
-            <img id="imig" class="absolute-img init-img" src="img/anya-shadow.png" alt="anya forger's shadow">
-            <figcaption id="figcap" class="absolute-txt">ANYA<span class="x">x</span>FORGER</figcaption>
-        </figure>
+<body>
+    <div class="container-top">
+        <a href="#" class="top">Back to Top ↑</a>
     </div>
-    <div id="site" class="hidden">
-        <header>
-            <nav class="navbar">
-                <div class="logo">ANYA<span>x</span>FORGER</div>
-                <ul class="nav-links">
-                    <li><a href="#about-me" data-id="about-me" class="nav-link">About Me</a></li>
-                    <li><a href="#my-work" data-id="my-work" class="nav-link">My Work</a></li>
-                    <li><a href="#contact-me" data-id="contact-me" class="nav-link">Contact Me</a></li>
-                </ul>
+    <div class="page">
+        <header class="navbar" id="navbar">
+            <a href="#init-animation" class="logo">ANYA<span>x</span>FORGER</a>
+            <nav class="nav-links">
+                <a href="#about-me" class="nav-link">About</a>
+                <a href="#my-work" class="nav-link">My Work</a>
+                <a href="#contact-me" class="nav-link">Contact</a>
             </nav>
         </header>
-        <main>
-            <section class="about-me section" id="about-me">
-                <div class="hr" id="hr"></div>
-                <h1 class="ml10" id="h1">
-                    <span class="text-wrapper">
-                        <span class="letters">MEET ANYA</span>
-                    </span>
-                </h1>
-                <div class="about-me-content">
-                    <div class="about-me-imgbox">
-                        <img src="img/Anya1.jpg" alt="">
-                        <h2 class="about-me-name">ANYA FORGER</h2>
-                        <div class="about-me-socials">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="about-me-text">
-                        <p>
+        <div id="init-animation" class="anim-container" aria-hidden="true">
+            <figure>
+                <img id="imig" class="absolute-img init-img" src="img/anya-shadow.png" alt="anya forger's shadow">
+                <figcaption id="figcap" class="absolute-txt">ANYA<span class="x">x</span>FORGER</figcaption>
+            </figure>
+        </div>
+        <div id="site" class="site">
+            <main>
+                <section class="about-me section" id="about-me">
+                    <h1 aria-labelledby="meetMe">
+                        <span class="text-wrapper">
+                            <span class="letters" id="meetMe">MEET ANYA</span>
+                        </span>
+                    </h1>
+                    <div class="about-me-content">
+                        <span class="about-me-imgbox">
+                            <img src="img/Anya1.jpg" alt="Anya Forger's profile picture">
+                            <h2 class="about-me-name">ANYA FORGER</h2>
+                            <span class="about-me-socials">
+                                <i class="fa fa-github" aria-label="github link"></i>
+                                <i class="fa fa-linkedin-square" aria-label="linkedin link"></i>
+                                <i class="fa fa-twitter" aria-label="twitter link"></i>
+                            </span>
+                        </span>
+                        <p class="about-me-text">
                             A cute and bright little spy from Ostania, knowing there's a puzzle in your head.
                             Anya enjoys finding and solving your problems, with all the superpowers in mind.
                             Would you like Anya's assistance? Let's save the day together!
+                            <br>
+                            P.S: Anya loves peanuts! 🥜
+                            <br>
+                            Waku waku~
                         </p>
-                        <p>P.S: Anya loves peanuts! 🥜</p>
-                        <p>Waku waku~</p>
                     </div>
-                </div>
-            </section>
-            <section class="my-work section hidden" aria-hidden="true" id="my-work">
-                <div class="hr" id="hr-work"></div>
-                <h1 class="ml11 hidden" id="h1-work">
-                    <span class="text-wrapper">
-                        <span class="letters">MY WORK</span>
-                    </span>
-                </h1>
-                <div class="project-container" id="container"></div>
-            </section>
-            <footer class="contact-me section hidden" aria-hidden="true" id="contact-me">
-                <div class="contact-me-title">
-                    <div class="hr" id="hr-contact"></div>
-                    <h1 class="ml12" id="h1-contact">
+                </section>
+                <section class="my-work section" aria-hidden="true" id="my-work">
+                    <h1 class="ml11" id="h1-work" aria-labelledby="myWork">
                         <span class="text-wrapper">
-                            <span class="letters">CONTACT ME</span>
+                            <span class="letters" id="myWork">MY WORK</span>
                         </span>
                     </h1>
-                </div>
-
-                <div class="contact-me-content">
-                    <div class="contact-me-text">
-                        <p class="descr">
-                            Please get in touch if you're interested in our projects, or feel that they could be
-                            mutually
-                            beneficial! Anya loves to hear back from you!
+                    <div class="project-container" id="container"></div>
+                </section>
+                <section class="contact-me section" id="contact-me">
+                    <h1 aria-labelledby="contactMe">
+                        <span class="text-wrapper">
+                            <span class="letters" id="contactMe">TALK TO ANYA</span>
+                        </span>
+                    </h1>
+                    <div class="contact-me-content">
+                        <img src="./img/e6de0676327b44a1bb38a2039bb87d74.jpeg" alt="Anya writing a letter"
+                            class="contact-me-content-img">
+                        <p class="contact-me-text">
+                            <span class="title">
+                                Anya loves to hear back from you!
+                            </span>
+                            Please get in touch if you're interested in my projects, or feel that they could be
+                            mutually beneficial!
+                            <span class="address">
+                                Address:
+                                <br>
+                                292 Dongfeng Avenue
+                                <br>
+                                Town A, Ohio 114514
+                            </span>
+                            <span class="info">
+                                <i class="fa fa-phone" aria-label="phone number"></i> 919-810-3608
+                                <br>
+                                <i class="fa fa-envelope-open-o" aria-label="email address"></i> anyaf8@gmail.com
+                            </span>
+                            <span class="contact-me-socials">
+                                <i class="fa fa-github" aria-label="facebook link"></i>
+                                <i class="fa fa-linkedin-square" aria-label="linkedin link"></i>
+                                <i class="fa fa-twitter" aria-label="tweeter link"></i>
+                            </span>
                         </p>
-                        <p>
-                            292 Dongfeng Avenue
-                            <br>
-                            Town A, Ohio 114514
-                        </p>
-                        <p>
-                            <i class="fa fa-phone" aria-hidden="true"></i> 919-810-3608
-                            <br>
-                            <i class="fa fa-envelope-open-o" aria-hidden="true"></i> anyaf8@gmail.com
-                        </p>
-                        <div class="contact-me-socials">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </div>
                     </div>
-                    <div class="contact-me-imgbox">
-                        <img src="./img/e6de0676327b44a1bb38a2039bb87d74.jpeg">
-                    </div>
-                </div>
-
+                </section>
+            </main>
+            <footer id="footer" aria-hidden="true">
+                <h2>ANYA<span>x</span>FORGER ©</h2>
             </footer>
-        </main>
+        </div>
     </div>
 </body>
 
