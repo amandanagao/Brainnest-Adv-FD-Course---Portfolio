@@ -494,12 +494,19 @@ footer h2 span {
     .about-me-content,
     .contact-me-content {
         grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 }
 
 @media screen and (max-width: 1280px) {
     h1 {
         top: 1vw;
+    }
+
+    .about-me-content,
+    .contact-me-content {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 }
 
@@ -516,17 +523,16 @@ footer h2 span {
         top: 20vw;
     }
 
-    .about-me-content,
-    .contact-me-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .about-me img {
         width: 230px;
     }
 
     .about-me-text {
         font-size: 27px;
+    }
+
+    .contact-me-content-img {
+        height: 300px;
     }
 }
 
