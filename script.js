@@ -68,7 +68,6 @@ projectaAnimation = function(port) {
     port.forEach((projectItem, i) => {
         setTimeout(() => {projectItem.classList.add('projectAnimation')}, i *100);
     });
-
 }
 
 createElement = function(project) {
